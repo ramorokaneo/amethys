@@ -6,6 +6,7 @@ function App() {
     <form>
       <label>Amethyst
       <input type='text' />
+      <button>save</button>
       </label>
     </form>
   );
