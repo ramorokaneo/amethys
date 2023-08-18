@@ -41,8 +41,8 @@ jobs:
           else
             #If the brunch is not master, dev or staging, exit without deploying echo "Branch not set up for deployment."
           fi
-          
-          # Deploy your application to Firebase Hosting
-          firebase deploy --only hosting --token "$FIREBASE_TOKEN"
+
+           # Deploy your application to specified Hosting Chanel
+          firebase hosting:channel:deploy "$CHANNEL" --token "$FIREBASE_TOKEN"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
