@@ -31,6 +31,17 @@ jobs:
 
       - name: Deploy to Firebase Hosting
         run: |
+          # Determine the Firebase Hosting Chanel based on the branch name
+          if [ "${{ github.ref}}" = "refs/heads/main" ]; then
+            CHANNEL="main"
+          elif [ "${{ github.ref}}" = "refs/heads/dev" ]; then
+            CHANNEL="dev"
+          elif [ "${{ github.ref}}" = "refs/heads/staging" ]; then
+            CHANNEL="staging"
+          else
+            #If the brunch is not master, dev or staging, exit without deploying echo "Branch not set up for deployment."
+          fi
+          
           # Deploy your application to Firebase Hosting
           firebase deploy --only hosting --token "$FIREBASE_TOKEN"
         env:
