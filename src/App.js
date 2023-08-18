@@ -15,6 +15,13 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+        <button>save</button>
+        <label>Amethyst</label>
+        <form>
+          <label>Onyx</label>
+          <input type='text' />
+          <button>Edit</button>
+        </form>
           Learn React
         </a>
       </header>
