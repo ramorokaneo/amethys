@@ -1,25 +1,23 @@
-import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
-  return (
+  const [inputValue, setInputValue] = useState('');
 
-   <form>
-    <label> Amethyst
-      <input type="text" />
-    </label>
-    <button>save</button>
-    <br/>
-    <label> Onyx
-      <input type="text" />
-    </label>
-    <button>save</button>
-    <br/>
-    <label> Topaz
-      <input type="text" />
-    </label>
-    <button>save</button>
-   </form>
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  return (
+    <div>
+      <h1>Input Example</h1>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleInputChange}
+        placeholder="Enter something..."
+      />
+      <p>You entered: {inputValue}</p>
+    </div>
   );
 }
 
